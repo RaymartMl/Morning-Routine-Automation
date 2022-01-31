@@ -7,13 +7,13 @@ from yachalk import chalk
 
 # Helper Functions
 
-def sendNotificationOnLinux(message):
+def send_notification_on_linux(message):
     subprocess.Popen(["notify-send", message])
     return
 
-def continueDay():
+def continue_day():
     input(chalk.cyan("Press too continue"))
-    print()        
+    print()
 
 def step(message, browser_open=None, os_run=None):
     print(chalk.blue.bold(message))
@@ -24,7 +24,7 @@ def step(message, browser_open=None, os_run=None):
     if os_run:
         os.system(os_run)
 
-    continueDay()
+    continue_day()
 
 
 # Start
@@ -42,7 +42,7 @@ def main():
     step("Create a new note for the day", "https://notejoy.com/")
 
     # Check slack / email / social
-    sendNotificationOnLinux("Don't get down to the rabbit hole :) ")
+    send_notification_on_linux("Don't get down to the rabbit hole :) ")
 
     step("Check your Slack", "https://app.slack.com/client/T0U4XB6FJ/D02HC0UB1L5")
     step("Check gmail", "https://mail.google.com/mail/u/0/")
