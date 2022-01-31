@@ -39,7 +39,7 @@ def main():
     step("Turn on white noise", "https://www.youtube.com/watch?v=nMfPqeZjc2c")
 
     # Notejoy
-    step("Create a new note for the day", "https://notejoy.com/")
+    step("Create a new note for the day", "https://notejoy.com/meeting-1e1129")
 
     # Check slack / email / social
     send_notification_on_linux("Don't get down to the rabbit hole :) ")
@@ -50,9 +50,9 @@ def main():
     step("Check Facebook", "https://www.facebook.com/")
 
     # Arrange 
-    step("Go back to note joy and arrange your task of the day", "https://notejoy.com/")
+    step("Look at your paper notes and list it in notejoy (arrange)", "https://notejoy.com/meeting-1e1129")
 
-    # Vscode
+    # Vscode in 2nd virtual desktop
     step("Opening vscode", os_run="qdbus org.kde.KWin /KWin nextDesktop && code")
 
     print(chalk.green.bold("Be grateful, no negative thoughts and have a great day!"))
