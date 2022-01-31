@@ -11,4 +11,5 @@ STARTUP:
 - and will open website and apps that I check and used
 
 This script is inspired with: https://github.com/EnkrateiaLucca/Morning-Routine-Automation
+
 Check his youtube channel too: https://www.youtube.com/channel/UCu8WF59Scx9f3H1N_FgZUwQ
