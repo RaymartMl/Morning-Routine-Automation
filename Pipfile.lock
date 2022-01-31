@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "b20aaa9718024ec28b53570df5a504bc1765bb9490e31099da47c34bd616c357"
+            "sha256": "a013c7ef598e19c44820c3f2f4221435c83052dcb5d23b100da795360ef56c00"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -15,6 +15,38 @@
             }
         ]
     },
-    "default": {},
+    "default": {
+        "importlib-resources": {
+            "hashes": [
+                "sha256:33a95faed5fc19b4bc16b29a6eeae248a3fe69dd55d4d229d2b480e23eeaad45",
+                "sha256:d756e2f85dd4de2ba89be0b21dba2a3bbec2e871a42a3a16719258a11f87506b"
+            ],
+            "version": "==5.4.0"
+        },
+        "pyfiglet": {
+            "hashes": [
+                "sha256:c6c2321755d09267b438ec7b936825a4910fec696292139e664ca8670e103639",
+                "sha256:d555bcea17fbeaf70eaefa48bb119352487e629c9b56f30f383e2c62dd67a01c"
+            ],
+            "index": "pypi",
+            "version": "==0.8.post1"
+        },
+        "yachalk": {
+            "hashes": [
+                "sha256:cac3b66a198a280f06adfde82f1604aecd9dd5ffc372a02b4f36d79ec499798a",
+                "sha256:fe389be1d574a3be00e0b849f1c0767f81da5bdfed9b122da07e6861e27c1c62"
+            ],
+            "index": "pypi",
+            "version": "==0.1.5"
+        },
+        "zipp": {
+            "hashes": [
+                "sha256:9f50f446828eb9d45b267433fd3e9da8d801f614129124863f9c51ebceafb87d",
+                "sha256:b47250dd24f92b7dd6a0a8fc5244da14608f3ca90a5efcd37a3b1642fac9a375"
+            ],
+            "markers": "python_version < '3.10'",
+            "version": "==3.7.0"
+        }
+    },
     "develop": {}
 }

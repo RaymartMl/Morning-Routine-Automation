@@ -1,0 +1,8 @@
+[Unit]
+Description=Start Day python automation
+
+[Service]
+ExecStart=/home/raymart/.virtualenvs/Morning-Routine-Automation-h9Gih_tJ/bin/python /home/raymart/Desktop/Morning-Routine-Automation/startday.py
+
+[Install]
+WantedBy=multi-user.target

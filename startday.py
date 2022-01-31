@@ -1,82 +1,63 @@
 import os
 import subprocess
-import time
 import webbrowser
-from datetime import datetime
 
+from pyfiglet import Figlet
+from yachalk import chalk
+
+# Helper Functions
 
 def sendNotificationOnLinux(message):
     subprocess.Popen(["notify-send", message])
     return
 
-
-def sendNotificationOnWindows(msg="", delay=2):
-    t = 0
-    notify = ToastNotifier()
-    while t < delay:
-        notify.show_toast("Notification",msg)
-        time.sleep(1)
-        t+=1
-
 def continueDay():
-    cont = input("Press too continue")
+    input(chalk.cyan("Press too continue"))
+    print()        
+
+def step(message, browser_open=None, os_run=None):
+    print(chalk.blue.bold(message))
+
+    if browser_open:
+        webbrowser.open(browser_open)
+    
+    if os_run:
+        os.system(os_run)
+
+    continueDay()
 
 
-# os.system("bash logSystemOnOff.sh") 
+# Start
+def main():
+    figlet = Figlet(font="standard")
+    print(chalk.green.bold(figlet.renderText("Start the day")))
 
-# print("Run keyfrequency and active window loggers with sudo")
+    # Timer
+    step("Turn on day timer", "https://www.google.com/search?q=3+hours+timer&oq=3+hours+timer&aqs=chrome..69i57.4988j0j1&sourceid=chrome&ie=UTF-8")
 
-# clockify
-# print("Turn on Focus")
-# continueDay()
+    # Music
+    step("Turn on white noise", "https://www.youtube.com/watch?v=nMfPqeZjc2c")
 
-print("Turn on white noise")
-continueDay()
+    # Notejoy
+    step("Create a new note for the day", "https://notejoy.com/")
 
-# Google calendar events
-print("Check your calendar")
-# webbrowser.open("https://calendar.google.com/calendar/u/0/r/day")
+    # Check slack / email / social
+    sendNotificationOnLinux("Don't get down to the rabbit hole :) ")
 
+    step("Check your Slack", "https://app.slack.com/client/T0U4XB6FJ/D02HC0UB1L5")
+    step("Check gmail", "https://mail.google.com/mail/u/0/")
+    step("Check Messenger", "https://www.messenger.com/")
+    step("Check Facebook", "https://www.facebook.com/")
 
-# notion 
-# webbrowser.open_new_tab("www.notion.so")
-print("Write your todo list on the Notion table with the routine and the specifics")
-continueDay()
+    # Arrange 
+    step("Go back to note joy and arrange your task of the day", "https://notejoy.com/")
 
+    # Vscode
+    step("Opening vscode", os_run="qdbus org.kde.KWin /KWin nextDesktop && code")
 
-# start vscode for coding
-# print("TYPE")
-# os.system('"mlt random "0)-_=+[{]};:\'\|//?"')
-# os.system("mlt random 123456!@#$%^qwertasdfgzxcvbZXCVBASDFGQWERT~")
-# os.system("python /home/lucassoares/Desktop/automated/logTyping.py")
-# continueDay()
-
-
-# print("MANDARIN")
-# webbrowser.open("www.duolingo.com")
-# continueDay()
-
-# print("CODE")
-# webbrowser.open("https://projecteuler.net/archives")
-# # start Anki
-
-
-# mail
-# teams, mail, slack, whatsapp
-# sendNotificationOnLinux("Open Mail, Teams, Slack and Whatsapp")
-# os.system("teams")
-# os.system("mailspring")
-# os.system("slack")
-# webbrowser.open("https://web.whatsapp.com/")
-
-# medium
-# webbrowser.open("https://medium.com/me/partner/dashboard")
-# print("Check your stats on Medium")
-# continueDay()
-
-# print("Leave an Ipython window open!")
-
-print("Be greateful, no negative thoughts and have a great day!")
+    print(chalk.green.bold("Be grateful, no negative thoughts and have a great day!"))
 
 
 
+if __name__=="__main__":
+    main()
